@@ -13,6 +13,11 @@
         body { font-family: 'Inter', sans-serif; }
         h1, h2, h3, .serif { font-family: 'Playfair Display', serif; }
     </style>
+    <script>
+      // Garante que o objeto process.env exista no navegador para evitar erros de referência
+      // A API_KEY será injetada automaticamente pelo ambiente de execução.
+      window.process = window.process || { env: {} };
+    </script>
 <script type="importmap">
 {
   "imports": {
@@ -26,5 +31,7 @@
 </head>
 <body class="bg-slate-50 text-slate-900">
     <div id="root"></div>
+    <!-- Script de inicialização da aplicação -->
+    <script type="module" src="index.tsx"></script>
 </body>
 </html>
